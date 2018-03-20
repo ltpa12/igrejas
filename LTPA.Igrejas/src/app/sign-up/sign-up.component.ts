@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../shared/user.model';
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -7,10 +8,25 @@ import { User } from '../shared/user.model';
 })
 export class SignUpComponent implements OnInit {
   user: User;
+  emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
 
   constructor() { }
 
   ngOnInit() {
   }
+
+  OnSubmit(form: NgForm) {
+    
+    // this.userService.registerUser(form.value)
+    //   .subscribe((data: any) => {
+    //     if (data.Succeeded == true) {
+    //       this.resetForm(form);
+    //       this.toastr.success('User registration successful');
+    //     }
+    //     else
+    //       this.toastr.error(data.Errors[0]);
+    //   });
+  }
+
 
 }
